@@ -1,0 +1,51 @@
+.page{
+    background: url('../img/background.jpg');
+    background-size: cover;
+}
+.logo-apss {height: 60px;}
+.md {
+    --f7-navbar-height: 64px;
+    --f7-navbar-font-size: 16px;
+    --f7-navbar-title-font-size: 22px;
+    --f7-navbar-inner-padding-left: 0px;
+    --f7-navbar-inner-padding-right: 0px;
+}
+.toolbar-center {
+    height: 65px;
+    width: 90%;
+    border-radius: 32px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 20px;
+    background: #34495e;
+}
+.toolbar-inner .tab-link{
+    color: white;
+}
+.toolbar-inner .tab-link .icon {
+    font-size: 24px;
+    transition: all 0.3s;
+}
+.toolbar-inner .tab-link .tabbar-label {
+    display: none;
+    transition: all 0.3s;
+}
+.toolbar-inner .tab-link-active .tabbar-label {
+    display: block;
+}
+.toolbar-inner .tab-link:not(.tab-link-active) .icon {
+    font-size: 36px;
+}
+.toolbar-inner .tab-link-active .icon {
+    color: #34495e;
+}
+.besar-icon80 {width: 80%;}
+.besar-icon100 {width: 100%;}
+.font18 {font-size: 18px;}
+.font22 {font-size: 22px;}
+.radius15 {border-radius: 15px;}
+.pad10 {padding: 10px;}
+.ml-15 {margin-left: 15px;}
+.mr-15 {margin-right: 15px;}
+
+.font16 {font-size: 16px;}
