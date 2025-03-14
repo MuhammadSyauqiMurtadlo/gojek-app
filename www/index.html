@@ -9,7 +9,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="theme-color" content="#fff">
   <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data:">
-  <title>E-Commerce</title>
+  <title>Gojek App</title>
   <link rel="stylesheet" href="core/framework7-bundle.min.css">
   <link rel="stylesheet" href="css/app.css">
   <link rel="stylesheet" href="css/custom.css">
@@ -23,6 +23,7 @@
   <div id="app">
     <div class="view view-main view-init safe-areas" data-master-detail-breakpoint="768" data-url="/"></div>
   </div>
+
   <script src="core/framework7-bundle.min.js"></script>
   <script src="js/jquery-3.7.1.min.js"></script>
   <script src="js/routes.js"></script>
@@ -34,31 +35,35 @@
     var titik;
     var startgps;
     tampilPeta();
-    function tampilPeta() {
-      hasil = L.map('petaku').setView([-7.5568035886386316, 112.23336696624757], 18);
-      L.tileLayer('https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+    function tampilPeta ()
+    {
+      hasil = L.map( 'petaku' ).setView( [ -7.5568035886386316, 112.23336696624757 ], 18 );
+      L.tileLayer( 'https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
         maxZoom: 20,
-        subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
-      }).addTo(hasil);
-      titik = L.marker([-7.5568035886386316, 112.23336696624757]).addTo(hasil);
+        subdomains: [ 'mt0', 'mt1', 'mt2', 'mt3' ]
+      } ).addTo( hasil );
+      titik = L.marker( [ -7.5568035886386316, 112.23336696624757 ] ).addTo( hasil );
       deteksiLokasi();
     }
-    function deteksiLokasi() {
-      startgps = navigator.geolocation.watchPosition(gps_sukses, gps_gagal,
+    function deteksiLokasi ()
+    {
+      startgps = navigator.geolocation.watchPosition( gps_sukses, gps_gagal,
         { maximumAge: 3000, timeout: 5000, enableHighAccuracy: true }
       );
 
-      function gps_sukses(x) {
+      function gps_sukses ( x )
+      {
         let lintang = x.coords.latitude;
         let bujur = x.coords.longitude;
-        $("#bloklintang").html(lintang);
-        $("#blokbujur").html(bujur);
-        hasil.flyTo([lintang, bujur], 19);
-        titik.setLatLng([lintang, bujur]);
+        $( "#bloklintang" ).html( lintang );
+        $( "#blokbujur" ).html( bujur );
+        hasil.flyTo( [ lintang, bujur ], 19 );
+        titik.setLatLng( [ lintang, bujur ] );
       }
 
-      function gps_gagal(error) {
-        alert(error);
+      function gps_gagal ( error )
+      {
+        alert( error );
       }
     }
 
